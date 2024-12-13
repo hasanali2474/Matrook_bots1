@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عملة matrook</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0; /* اللون الافتراضي */
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #5a6fb2;
+        }
+        .settings {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .settings-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #7289da;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #5a6fb2;
+        }
+        /* أنماط الوضع الداكن */
+        .dark-mode {
+            background-color: #333;
+            color: red; /* لون النص في الوضع الداكن */
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const darkModeButton = document.getElementById('darkModeButton');
+            darkModeButton.textContent = body.classList.contains('dark-mode') ? 'التغيير للوضع الفاتح' : 'تبديل الوضع الداكن';
+        }
+
+        function changeLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                element.style.display = element.getAttribute('data-lang') === language ? 'block' : 'none';
+            });
+        }
+
+        function toggleSettings() {
+            const settings = document.querySelector('.settings');
+            settings.style.display = settings.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>مرحبا بكم في عملة matrook</h1>
+    <button onclick="toggleSettings()">الإعدادات</button>
+</header>
+<main>
+    <section class="card">
+        <h2 data-lang="ar">عملة matrook</h2>
+        <h2 data-lang="en" style="display:none;">Matrook Currency</h2>
+        
+        <p data-lang="ar">عملة matrook هي عملة بسيطة صنعها @ʜˢ HE ENG hasanali2474</p>
+        <p data-lang="en" style="display:none;">Matrook currency is a simple currency created by @ʜˢ HE ENG hasanali2474</p>
+        
+        <p>1k من العملة = 100k كريديت</p>
+        <p>الأوامر كلها تبدأ بـ /</p>
+        <p>يمكن اعتبارها بنكاً إلى حد ما.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1316676094987866112&permissions=0&integration_type=0&scope=bot">رابط البوت</a>
+        <p>سيرفر الدعم الفني للبوتات: <a href="https://discord.gg/zZfvbJmVZV">انضم الآن!</a></p>
+    </section>
+
+    <section class="card">
+        <h2 data-lang="ar">بوت البريميوم</h2>
+        <h2 data-lang="en" style="display:none;">Premium Bot</h2>
+        
+        <p data-lang="ar">أسعار البريميوم:</p>
+        <p data-lang="en" style="display:none;">Premium prices:</p>
+        
+        <ul>
+            <li data-lang="ar">بريميوم أسبوع = 5m كريديت</li>
+            <li data-lang="en" style="display:none;">Premium week = 5m credit</li>
+            <li data-lang="ar">بريميوم شهر = 10m كريديت</li>
+            <li data-lang="en" style="display:none;">Premium month = 10m credit</li>
+            <li data-lang="ar">بريميوم سنة = 100m كريديت</li>
+            <li data-lang="en" style="display:none;">Premium year = 100m credit</li>
+            <li data-lang="ar">بريميوم مدى الحياة = 1b كريديت</li>
+            <li data-lang="en" style="display:none;">Lifetime premium = 1b credit</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2 data-lang="ar">بوت السيستم ومميزاته</h2>
+        <h2 data-lang="en" style="display:none;">System Bot and its Features</h2>
+        
+        <p data-lang="ar">السلام عليكم ورحمة الله وبركاته ...</p>
+        <p data-lang="en" style="display:none;">Peace be upon you ...</p>
+        
+        <p data-lang="ar">بوت matrook system هو بوت تابع لـ من تصميم <@1007553921532821604></p>
+        <p data-lang="en" style="display:none;">The matrook system bot is a bot designed by <@1007553921532821604></p>
+        
+        <p>الأوامر كلها تبدأ بـ /</p>
+        <p>بوت سيستم متواضع.</p>
+        <p>بوت تكت متواضع.</p>
+        <a href="https://discord.com/oauth2/authorize?client_id=1316676094987866112&permissions=0&integration_type=0&scope=bot">رابط السيستم</a>
+    </section>
+</main>
+
+<div class="settings">
+    <div class="settings-content">
+        <button class="close-btn" onclick="toggleSettings()">×</button>
+        <h3>الإعدادات</h3>
+        <button id="darkModeButton" onclick="toggleDarkMode()">تبديل الوضع الداكن</button>
+        <button onclick="changeLanguage('ar')">العربية</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+        <button onclick="changeLanguage('es')">Español</button>
+        <button onclick="changeLanguage('de')">Deutsch</button>
+    </div>
+</div>
+</body>
+</html>
